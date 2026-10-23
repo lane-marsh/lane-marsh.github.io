@@ -8,7 +8,7 @@ phone: +1 541-974-1280
 site: [lane-marsh.github.io](https://lane-marsh.github.io)
 
 
-[Resume/CV](https://lane-marsh.github.io/Resume.pdf)  
+<a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume/CV</a>  
 [LinkedIn](https://www.linkedin.com/in/lane-m-marsh/)  
 [LeetCode](https://leetcode.com/u/lmmarsh43/)
 
