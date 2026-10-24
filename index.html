@@ -3,24 +3,75 @@ layout: default
 title: Lane Marsh
 ---
 
+<style>
+  .site-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 1px solid #d1d5da;
+    margin-bottom: 2rem;
+  }
+
+  .site-tabs a {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-tabs a:hover,
+  .site-tabs a:focus-visible {
+    border-bottom-color: #267cb9;
+  }
+
+  .page-section {
+    margin: 0 0 2.5rem;
+    scroll-margin-top: 1rem;
+  }
+</style>
+
 <h1>Lane Marsh</h1>
 <h2>Engineer searching for employment in Sydney</h2>
 
-<h3>Get In Touch!</h3>
-<p>
-  email: <a href="mailto:lmmarsh43@gmail.com">lmmarsh43@gmail.com</a><br>
-  phone: <a href="tel:+15419741280">+1 541-974-1280</a><br>
-  site: <a href="https://lane-marsh.github.io" target="_blank" rel="noopener noreferrer">lane-marsh.github.io</a>
-</p>
+<nav class="site-tabs" aria-label="Page sections">
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+  <a href="#hobbies">Hobbies</a>
+</nav>
 
-<p>
-  <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume/CV</a><br>
-  <a href="https://www.linkedin.com/in/lane-m-marsh/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-  <a href="https://leetcode.com/u/lmmarsh43/" target="_blank" rel="noopener noreferrer">LeetCode</a>
-</p>
+<section class="page-section" id="about" aria-labelledby="about-heading">
+  <h2 id="about-heading">About</h2>
+  <p>
+    I am an engineer with a decade of experience in fleet reliability programs, data-driven maintenance analysis, and systems engineering.
+    This site shares my background as I seek an opportunity with an employer willing to sponsor my working rights in Australia.
+    Learn more about the <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skills-in-demand-visa-subclass-482" target="_blank" rel="noopener noreferrer">SID 482 Visa</a>.
+  </p>
+  <p>
+    <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume/CV</a><br>
+    <a href="https://www.linkedin.com/in/lane-m-marsh/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+    <a href="https://leetcode.com/u/lmmarsh43/" target="_blank" rel="noopener noreferrer">LeetCode</a>
+  </p>
+</section>
 
-<p>
-  A site to advertise my eligibility for employment in Australia - seeking a company to sponsor my working rights, likely via
-  <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skills-in-demand-visa-subclass-482" target="_blank" rel="noopener noreferrer">SID 482 Visa</a>.
-  I am a self-described skilled engineer with various technical accolades across some relatively beloved (or polarizing... we're splitting hairs) companies in the aerospace industry.
-</p>
+<section class="page-section" id="experience" aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  <p>
+    Experienced managing reliability metrics, identifying failure trends, and presenting actionable insights to engineering and operational stakeholders.
+    Proficient in Python, SQL, and data pipeline development, with direct experience in aircraft health monitoring and maintenance data systems.
+  </p>
+</section>
+
+<section class="page-section" id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Contact</h2>
+  <p>
+    Email: <a href="mailto:lmmarsh43@gmail.com">lmmarsh43@gmail.com</a><br>
+    Phone / WhatsApp: <a href="tel:+15419741280">+1 541-974-1280</a>
+  </p>
+</section>
+
+<section class="page-section" id="hobbies" aria-labelledby="hobbies-heading">
+  <h2 id="hobbies-heading">Hobbies</h2>
+  <p>Tennis, running, and fly fishing.</p>
+</section>
