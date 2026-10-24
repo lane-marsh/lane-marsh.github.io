@@ -1,12 +1,11 @@
 <footer class="site-footer">
   <div class="wrapper">
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
     <ul class="contact-list">
-      <li><a href="mailto:lmmarsh43@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/lane-m-marsh/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li>
+        <a href="mailto:lmmarsh43@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/lane-m-marsh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </li>
     </ul>
-
-    <p>&copy; {{ 'now' | date: '%Y' }}h</p>
+    <p>&copy; {{ 'now' | date: '%Y%mm%dd hh:mm' }}h</p>
   </div>
 </footer>
