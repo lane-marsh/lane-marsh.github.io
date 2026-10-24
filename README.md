@@ -12,4 +12,4 @@ phone: +1 541-974-1280 (Available on Whatsapp)
 <a href="https://leetcode.com/u/lmmarsh43/" target="_blank" rel="noopener noreferrer">LeetCode</a>
 
 ## Purpose
-This site will be a continuous project to promote my background and land a job with an employer willing to sponsor my working rights in Australia. Click around or just reach out!
+This site will be a continuous project to promote my background and land a job with an employer willing to sponsor my working rights in Australia. Click around or if you've seen enough, just reach out!
