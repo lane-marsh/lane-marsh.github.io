@@ -7,7 +7,7 @@ email: lmmarsh43@gmail.com
 phone: +1 541-974-1280 (Available on Whatsapp)
 
 ## Quick References
-<a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume/CV</a>  
+<a href="/assets/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume/CV</a><br>
 <a href="https://www.linkedin.com/in/lane-m-marsh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>  
 <a href="https://leetcode.com/u/lmmarsh43/" target="_blank" rel="noopener noreferrer">LeetCode</a>
 
