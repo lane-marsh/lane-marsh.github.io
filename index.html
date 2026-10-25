@@ -12,36 +12,38 @@ title: Lane Marsh
     margin-bottom: 2rem;
   }
 
-  .site-tabs a {
-    display: inline-block;
+  .site-tabs button {
     padding: 0.65rem 1rem;
+    border: 0;
     border-bottom: 3px solid transparent;
+    background: transparent;
     color: inherit;
-    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
   }
 
-  .site-tabs a:hover,
-  .site-tabs a:focus-visible {
+  .site-tabs button:hover,
+  .site-tabs button:focus-visible,
+  .site-tabs button[aria-selected="true"] {
     border-bottom-color: #267cb9;
   }
 
   .page-section {
     margin: 0 0 2.5rem;
-    scroll-margin-top: 1rem;
   }
 </style>
 
 <h1>Lane Marsh</h1>
 <h2>Engineer searching for employment in Sydney</h2>
 
-<nav class="site-tabs" aria-label="Page sections">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
-  <a href="#hobbies">Hobbies</a>
-</nav>
+<div class="site-tabs" role="tablist" aria-label="Page sections">
+  <button id="about-tab" type="button" role="tab" aria-controls="about-panel" aria-selected="true" tabindex="0">About</button>
+  <button id="experience-tab" type="button" role="tab" aria-controls="experience-panel" aria-selected="false" tabindex="-1">Experience</button>
+  <button id="contact-tab" type="button" role="tab" aria-controls="contact-panel" aria-selected="false" tabindex="-1">Contact</button>
+  <button id="hobbies-tab" type="button" role="tab" aria-controls="hobbies-panel" aria-selected="false" tabindex="-1">Hobbies</button>
+</div>
 
-<section class="page-section" id="about" aria-labelledby="about-heading">
+<section class="page-section" id="about-panel" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
   <h2 id="about-heading">About</h2>
   <p>
     I am an engineer with a decade of experience in fleet reliability programs, data-driven maintenance analysis, and systems engineering.
@@ -55,7 +57,7 @@ title: Lane Marsh
   </p>
 </section>
 
-<section class="page-section" id="experience" aria-labelledby="experience-heading">
+<section class="page-section" id="experience-panel" role="tabpanel" aria-labelledby="experience-tab" tabindex="0">
   <h2 id="experience-heading">Experience</h2>
   <p>
     Experienced managing reliability metrics, identifying failure trends, and presenting actionable insights to engineering and operational stakeholders.
@@ -63,7 +65,7 @@ title: Lane Marsh
   </p>
 </section>
 
-<section class="page-section" id="contact" aria-labelledby="contact-heading">
+<section class="page-section" id="contact-panel" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
   <h2 id="contact-heading">Contact</h2>
   <p>
     Email: <a href="mailto:lmmarsh43@gmail.com">lmmarsh43@gmail.com</a><br>
@@ -71,7 +73,45 @@ title: Lane Marsh
   </p>
 </section>
 
-<section class="page-section" id="hobbies" aria-labelledby="hobbies-heading">
+<section class="page-section" id="hobbies-panel" role="tabpanel" aria-labelledby="hobbies-tab" tabindex="0">
   <h2 id="hobbies-heading">Hobbies</h2>
   <p>Tennis, running, and fly fishing.</p>
 </section>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+
+  function activateTab(tab) {
+    tabs.forEach((item) => {
+      const selected = item === tab;
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+    });
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', (event) => {
+      let nextIndex;
+
+      if (event.key === 'ArrowRight') {
+        nextIndex = (index + 1) % tabs.length;
+      } else if (event.key === 'ArrowLeft') {
+        nextIndex = (index - 1 + tabs.length) % tabs.length;
+      } else if (event.key === 'Home') {
+        nextIndex = 0;
+      } else if (event.key === 'End') {
+        nextIndex = tabs.length - 1;
+      } else {
+        return;
+      }
+
+      event.preventDefault();
+      tabs[nextIndex].focus();
+      activateTab(tabs[nextIndex]);
+    });
+  });
+
+  activateTab(tabs[0]);
+</script>
